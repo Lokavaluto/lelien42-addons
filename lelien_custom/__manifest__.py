@@ -3,10 +3,10 @@
 
 {
     'name': 'Le Lien 42 customization',
-    'version': '12.0.1.0.0',
+    'version': '16.0.1.0.0',
     'category': '',
     'description': "Le Lien 42 : custom fields and views",
-    'depends': ['base','lcc_members'],
+    'depends': ['base','lcc_members','partner_gogocarto_export_api'],
     'data': [
         'views/res_partner_views.xml'
     ],

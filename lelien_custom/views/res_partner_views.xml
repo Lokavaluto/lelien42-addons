@@ -2,98 +2,117 @@
     <record id="view_lcc_members_form_inherit" model="ir.ui.view">
         <field name="name">view.lcc.members.form.inherit</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="lcc_members.main_members_view"/>
+        <field name="inherit_id" ref="lcc_members.lcc_members_form_view" />
         <field name="arch" type="xml">
             <!-- Add fields paper digital -->
             <xpath expr="//field[@name='category_id']" position="after">
-                <field name="paper"/>
-                <field name="digital"/>
+                <field name="paper" />
+                <field name="digital" />
             </xpath>
-            <!--Onglet dédié à l'autodiagnostic à l'adhésion-->
+            <!--Onglet
+            dédié à l'autodiagnostic à l'adhésion-->
             <xpath expr="//page[@name='membership']" position="after">
-                <page name="autodiagnostic" string="Autodiagnostic" attrs="{'invisible': [('is_company', '=', False)]}">
+                <page name="autodiagnostic" string="Autodiagnostic"
+                    attrs="{'invisible': [('is_company', '=', False)]}">
                     <group name="relocalisation" string="Relocalisation de l'économie">
-                        <field attrs="{'invisible': [('is_company', '=', False)]}" name="relocalisation_now"/>
-                        <field attrs="{'invisible': [('is_company', '=', False)]}" name="relocalisation_futur"/>
+                        <field attrs="{'invisible': [('is_company', '=', False)]}"
+                            name="relocalisation_now" />
+                        <field attrs="{'invisible': [('is_company', '=', False)]}"
+                            name="relocalisation_futur" />
                     </group>
                     <group name="Empreinte" string="Empreinte écologique">
-                        <field attrs="{'invisible': [('is_company', '=', False)]}" name="empreinte_now"/>
-                        <field attrs="{'invisible': [('is_company', '=', False)]}" name="empreinte_futur"/>
+                        <field attrs="{'invisible': [('is_company', '=', False)]}"
+                            name="empreinte_now" />
+                        <field attrs="{'invisible': [('is_company', '=', False)]}"
+                            name="empreinte_futur" />
                     </group>
                     <group name="social" string="Actions Sociales">
-                        <field attrs="{'invisible': [('is_company', '=', False)]}" name="social_now"/>
-                        <field attrs="{'invisible': [('is_company', '=', False)]}" name="social_futur"/>  
+                        <field attrs="{'invisible': [('is_company', '=', False)]}" name="social_now" />
+                        <field attrs="{'invisible': [('is_company', '=', False)]}"
+                            name="social_futur" />
                     </group>
                     <group name="ciotyenneté" string="Engagements citoyens">
-                        <field attrs="{'invisible': [('is_company', '=', False)]}" name="citizen_now"/>
-                        <field attrs="{'invisible': [('is_company', '=', False)]}" name="citizen_futur"/>
+                        <field attrs="{'invisible': [('is_company', '=', False)]}"
+                            name="citizen_now" />
+                        <field attrs="{'invisible': [('is_company', '=', False)]}"
+                            name="citizen_futur" />
                     </group>
                 </page>
             </xpath>
-            <!--Add field Fond de tresorerie -->
-            <xpath expr="//field[@name='convention_specific_agreement']" position="after">
-                <field name="fond_de_tresorerie"/>
+            <!--Add
+            field Fond de tresorerie -->
+            <xpath expr="//field[@name='convention_agreement']" position="after">
+                <field name="fond_de_tresorerie" />
             </xpath>
-            <!--Add field Date de fin d'exemption 3% -->
+            <!--Add
+            field Date de fin d'exemption 3% -->
             <xpath expr="//field[@name='convention_signature_date']" position="after">
-                <field name="exemption3prct"/>
+                <field name="exemption3prct" />
             </xpath>
-            <!--Add field Réductions -->
+            <!--Add
+            field Réductions -->
             <xpath expr="//field[@name='discount']" position="after">
-                <field name="reductions"/>
+                <field name="reductions" />
             </xpath>
-            <!--Add field Legal Status -->
-            <xpath expr="//field[@name='vat']" position="after">
-                <field name="legal_status" attrs="{'invisible': [('is_company', '=', False)]}"/>
-                <field name="table_info" attrs="{'invisible': [('is_company', '=', False)]}"/>
-                <field name="nombre_salarie" attrs="{'invisible': [('is_company', '=', False)]}"/>
-                <field name="nbr_etp" attrs="{'invisible': [('is_company', '=', False)]}"/>
+            <!--Add
+            field Legal Status -->
+            <xpath expr="//field[@name='ref']" position="after">
+                <field name="legal_status" attrs="{'invisible': [('is_company', '=', False)]}" />
+                <field name="table_info" attrs="{'invisible': [('is_company', '=', False)]}" />
+                <field name="nombre_salarie" attrs="{'invisible': [('is_company', '=', False)]}" />
+                <field name="nbr_etp" attrs="{'invisible': [('is_company', '=', False)]}" />
             </xpath>
-            <!-- hide VAT field --> 
-            <xpath expr="//field[@name='vat']" position="attributes">
-                <attribute name="invisible">1</attribute>
-            </xpath>
-            <!--Onglet dédié à l'ancrage territorial-->
+            <!--Onglet
+            dédié à l'ancrage territorial-->
             <xpath expr="//page[@name='annuaire']" position="after">
-                <page name="ancrage" string="Ancrage Territorial" attrs="{'invisible': [('is_company', '=', False)]}"> 
+                <page name="ancrage" string="Ancrage Territorial"
+                    attrs="{'invisible': [('is_company', '=', False)]}">
                     <group name="ancragessss" string="Infos générales">
-                        <field attrs="{'invisible': [('is_company', '=', False)]}" name="last_ancrage"/>
-                        <field attrs="{'invisible': [('is_company', '=', False)]}" name="ancrage_activite"/>
-                        <field attrs="{'invisible': [('is_company', '=', False)]}" name="commercial_partners"/>
-                        <field attrs="{'invisible': [('is_company', '=', False)]}" name="projects"/>
-                        <field attrs="{'invisible': [('is_company', '=', False)]}" name="needs"/>
-                        <field attrs="{'invisible': [('is_company', '=', False)]}" name="ressources"/>
+                        <field attrs="{'invisible': [('is_company', '=', False)]}"
+                            name="last_ancrage" />
+                        <field attrs="{'invisible': [('is_company', '=', False)]}"
+                            name="ancrage_activite" />
+                        <field attrs="{'invisible': [('is_company', '=', False)]}"
+                            name="commercial_partners" />
+                        <field attrs="{'invisible': [('is_company', '=', False)]}" name="projects" />
+                        <field attrs="{'invisible': [('is_company', '=', False)]}" name="needs" />
+                        <field attrs="{'invisible': [('is_company', '=', False)]}" name="ressources" />
                     </group>
                 </page>
             </xpath>
-            <!-- hide volunteer field for companies --> 
+            <!-- hide volunteer field for companies -->
             <xpath expr="//field[@name='is_volunteer']" position="attributes">
                 <attribute name="attrs">{'invisible': [('is_company','=',True)]}</attribute>
             </xpath>
-            <!-- add gogocarto fields -->
-            <xpath expr="//group[@name='presentation']" position="after">
+            <!-- add gogocarto fields in Annuaire page group tehnical-->
+            <xpath expr="//page[@name='annuaire']" position="inside">
                 <group name="Technical" string="Technical">
-                    <field name="in_gogocarto"/>
+                    <field name="in_gogocarto" />
                 </group>
+                <!-- add info extra images -->
+                <group name="extra_images" string="Extra Images" />
+                <div class="alert alert-warning" role="alert" style="margin-bottom:0px;">
+                    <span><b>Attention:</b> Odoo ne compresse pas les images. la somme totale de vos
+                        images ne doit pas dépasser 4mo. Pour compresser vos images vous pouvez par
+                        exemple utiliser ce site : <a
+                            href="https://compressjpeg.com/fr/" target="_blank">
+                        https://compressjpeg.com/fr/</a></span>
+                </div>
             </xpath>
-            <!-- Add description field -->
+            <!-- Add description page -->
             <xpath expr="//page[@name='annuaire']" position="after">
-                <page name="description" string="Description" attrs="{'invisible': [('is_company','=',False)]}">
-                    <field name="website_description" placeholder="Description détaillée du professionnel"/>
+                <page name="description" string="Description"
+                    attrs="{'invisible': [('is_company','=',False)]}">
+                    <field name="website_description"
+                        placeholder="Description détaillée du professionnel" />
                 </page>
             </xpath>
-            <!-- add info extra images -->
-            <xpath expr="//group[@name='extra_images']" position="after">
-                <p><strong>Attention :</strong> odoo ne compresse pas les images. la somme totale de vos images ne doit pas dépasser 4mo. Pour compresser vos images vous pouvez par exemple utilsier ce site : https://compressjpeg.com/fr/</p>
-            </xpath>
-            <!-- remove membership type field --> 
-            <xpath expr="//field[@name='member_type_id']" position="replace"/>
-            <!-- remove APE code field --> 
-            <xpath expr="//field[@name='legal_activity_code']" position="replace"/>
-            <!-- remove membership number field --> 
-            <xpath expr="//field[@name='ref']" position="replace"/>
-            <!-- remove RCS field --> 
-            <xpath expr="//field[@name='company_registry']" position="replace"/>
+            <!-- remove membership type field -->
+            <xpath expr="//field[@name='member_type_id']" position="replace" />
+            <!-- remove membership number field -->
+            <xpath expr="//field[@name='ref']" position="replace" />
+            <!-- remove RCS field -->
+            <xpath expr="//field[@name='company_registry']" position="replace" />
         </field>
     </record>
 </odoo>
