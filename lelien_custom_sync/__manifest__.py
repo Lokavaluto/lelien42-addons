@@ -3,7 +3,7 @@
 
 {
     'name': 'lelien_custom_sync',
-    'version': '16.0.1.0.0',
+    'version': '16.0.1.0.1',
     'author': 'Elabore',
     'description': "Le Lien 42 : cron public and private data syncronization",
     'depends': ['base','partner_profiles'],
